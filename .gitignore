@@ -1,3 +1,10 @@
 .vscode
 bak
 build
+system
+out
+tonos-cli.conf.json
+bin
+*.tar.gz
+secret
+GiverV2.*

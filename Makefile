@@ -145,7 +145,7 @@ $(SYS)/$T/updateImage_%.res: $(SYS)/$T/address $(BLD)/$T.abi.json $(SYS)/$T/upda
 
 upgrade: $(IMAGES)
 	echo $^
-	rm $(SYS)/$T/_active.out
+	rm -f $(SYS)/$T/_active.out
 spawn: $(SYS)/$T/deploy.res
 	echo $^
 
@@ -270,11 +270,12 @@ LMR:=$(MMR) _matching
 rmm.%: $(CCH)/$L.%
 	$(foreach r,$(LMR),$(call _pub,$L,$r);)
 
-# make rqr169
+rqr169:
 rqr%: $(CCH)/$C.%
 	$(file >out/aa,$(call _args,flavor ratingLo ratingHi quota,$F 1400 1700 1))
 	$(call _call,$C) requestGame out/aa
-# make jgr170
+
+jgr170:
 jgr%: $(CCH)/$P.%
 	$(call _call,$P) joinGame '{"flavor":$F}'
 	rm $(SYS)/$L/$F/_games.out

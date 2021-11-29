@@ -13,14 +13,14 @@ ifeq ($(UNAME_S),Darwin)
 endif
 
 # Tools directories
-BIN:=~/bin
+BIN:=$(PWD)/bin
 SOLC:=$(BIN)/solc
 LIB:=$(BIN)/stdlib_sol.tvm
 LINKER:=$(BIN)/tvm_linker
 TOC:=$(BIN)/tonos-cli
+SCRIPT:=$(PWD)/script
 
-GIVER:=Novi
-_pay=$(BIN)/$(GIVER)/s2.sh $1 $2
+_pay=$(SCRIPT)/giver.sh $1 $2
 
 # Repository location
 GIT:=$(CURDIR)
@@ -31,7 +31,7 @@ SRC:=src
 BLD:=build
 # Data used by the offchain system to interact with the blockchain
 DAT:=data
-KEY:=~
+KEY:=$(PWD)/secret
 
 # colored output
 red:=\033[0;31m

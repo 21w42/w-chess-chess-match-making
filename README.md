@@ -14,8 +14,18 @@ The Chess Matchmaking smart-contract system provides extended support for the ch
 
 ## Installation steps
 
-    make tools: downloads binaries for Linux or MacOS into ~/bin directory
+    make tools: downloads binaries for Linux or MacOS into ./bin directory
     make install: configures the local environment
+
+## Deploy steps
+
+Create keypair `secret/k1.keys`
+
+    bash script/keypair.sh
+
+Deploy to `net.ton.dev`
+
+    make deploy
 
 ## Game flavors
 
